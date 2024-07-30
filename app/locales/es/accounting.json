@@ -1,0 +1,30 @@
+{
+  "title": "Página principal de contabilidad",
+  "description": "Esta es la página principal de contabilidad",
+  "searchBar": {
+    "search": "Buscar...",
+    "filters": {
+      "currencies": {
+        "title": "Monedas",
+        "description": "Filtrar por moneda",
+        "mainOption": "Todas las monedas",
+        "options": {
+          "usd": "USD",
+          "mxn": "MXN",
+          "eur": "EUR",
+          "gbp": "GBP"
+        }
+      },
+      "types": {
+        "title": "Tipos",
+        "description": "Filtrar por tipo",
+        "mainOption": "Todos los tipos",
+        "options": {
+          "income": "Ingreso",
+          "expense": "Gasto",
+          "transfer": "Transferencia"
+        }
+      }
+    }
+  }
+}

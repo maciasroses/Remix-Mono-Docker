@@ -1,0 +1,40 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+      - "5555:5555" # FOR USE THIS, RUN THIS COMMAND: docker compose exec web npx prisma studio
+    environment:
+      DATABASE_URL: postgres://postgres:postgres@db:5432/postgres
+      JWT_SECRET: JWT_SECRET_KEY
+      SESSION_SECRET: SESSION_SECRET_KEY
+      ADMIN_SECRET_KEY: SECRET_INVITATION_KEY
+    depends_on:
+      - db
+    develop:
+      watch:
+        - path: ./package.json
+          action: rebuild
+        - path: ./vite.config.ts
+          action: rebuild
+        - path: ./package-lock.json
+          action: rebuild
+        - path: .
+          target: /app
+          action: sync
+
+  db:
+    image: postgres:13
+    ports:
+      - "5434:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

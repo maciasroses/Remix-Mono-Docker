@@ -1,0 +1,30 @@
+{
+  "title": "Accounting main page",
+  "description": "This is the main page for accounting",
+  "searchBar": {
+    "search": "Search...",
+    "filters": {
+      "currencies": {
+        "title": "Currencies",
+        "description": "Filter by currency",
+        "mainOption": "All currencies",
+        "options": {
+          "usd": "USD",
+          "mxn": "MXN",
+          "eur": "EUR",
+          "gbp": "GBP"
+        }
+      },
+      "types": {
+        "title": "Types",
+        "description": "Filter by type",
+        "mainOption": "All types",
+        "options": {
+          "income": "Income",
+          "expense": "Expense",
+          "transfer": "Transfer"
+        }
+      }
+    }
+  }
+}
